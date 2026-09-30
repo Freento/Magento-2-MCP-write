@@ -1,0 +1,20 @@
+{
+    "name": "freento/module-mcp-write",
+    "description": "MCP Write Tools for Magento 2 - lets AI assistants create and update store data through Magento service contracts",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "magento/framework": "^103.0",
+        "freento/module-mcp": "^1.2"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Freento\\McpWrite\\": ""
+        }
+    }
+}

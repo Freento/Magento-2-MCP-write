@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="freento" translate="label" sortOrder="300">
+            <label>Freento</label>
+        </tab>
+        <section id="freento_mcp" translate="title" sortOrder="100" showInDefault="1"
+                 showInWebsite="0" showInStore="0">
+            <label>MCP</label>
+            <tab>freento</tab>
+            <resource>Freento_Mcp::config</resource>
+            <group id="write" translate="label" sortOrder="20" showInDefault="1"
+                   showInWebsite="0" showInStore="0">
+                <label>MCP Write Tools</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Write Tools</label>
+                    <comment>When disabled, all MCP Write tools are hidden everywhere: they are not exposed via tools/list, cannot be called, and do not appear in the ACL Rule tools list. Disabled by default.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

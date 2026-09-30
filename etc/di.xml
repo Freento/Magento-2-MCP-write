@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Register write tools in the Freento MCP tool registry -->
+    <type name="Freento\Mcp\Model\ToolRegistry">
+        <arguments>
+            <argument name="tools" xsi:type="array">
+                <!-- Catalog -->
+                <item name="update_product_attributes" xsi:type="object">Freento\McpWrite\Model\Tool\UpdateProductAttributes</item>
+                <item name="create_product" xsi:type="object">Freento\McpWrite\Model\Tool\CreateProduct</item>
+                <item name="update_stock" xsi:type="object">Freento\McpWrite\Model\Tool\UpdateStock</item>
+                <item name="update_product_prices" xsi:type="object">Freento\McpWrite\Model\Tool\UpdateProductPrices</item>
+                <item name="assign_product_categories" xsi:type="object">Freento\McpWrite\Model\Tool\AssignProductCategories</item>
+                <!-- Sales -->
+                <item name="add_order_comment" xsi:type="object">Freento\McpWrite\Model\Tool\AddOrderComment</item>
+                <item name="create_shipment" xsi:type="object">Freento\McpWrite\Model\Tool\CreateShipment</item>
+                <item name="create_creditmemo" xsi:type="object">Freento\McpWrite\Model\Tool\CreateCreditmemo</item>
+                <!-- Customer -->
+                <item name="update_customer" xsi:type="object">Freento\McpWrite\Model\Tool\UpdateCustomer</item>
+            </argument>
+        </arguments>
+        <!-- Hide write tools everywhere when the module is disabled in admin config -->
+        <plugin name="freento_mcp_write_tool_registry"
+                type="Freento\McpWrite\Plugin\ToolRegistryPlugin"
+                sortOrder="100"/>
+    </type>
+
+</config>
